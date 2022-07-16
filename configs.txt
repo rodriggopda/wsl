@@ -1,0 +1,9 @@
+Obter ip do wsl
+
+Opção 1> ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+
+Opção 2> ip addr  | grep eth0
+
+Redirecionamento de porta na rede local
+
+netsh interface portproxy add v4tov4 listenport=[port] listenaddress=0.0.0.0 connectport=[port] connectaddress=[wsl-ip]
